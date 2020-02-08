@@ -6,6 +6,8 @@ import re #split text
 import datetime #current date and time
 import pyttsx3 #for text to speech conversion
 # pip install pyttsx3
+import speech_recognition as sr #for speech to text conversion
+# pip install speech_recognition
 
 #q stands for question and a stands for answer like
 #ownerq = asking question about owner
