@@ -1,7 +1,11 @@
+# before running first install python libraries
+
 import random #for random function
 import time #for delay if you want
 import re #split text
 import datetime #current date and time
+import pyttsx3 #for text to speech conversion
+# pip install pyttsx3
 
 #q stands for question and a stands for answer like
 #ownerq = asking question about owner
@@ -25,23 +29,36 @@ nameq = ["call me","my name is"]
 
 dateq = ["date", "time"]
 
+#for speech function
+def speak(data):
+    engine = pyttsx3.init()
+    engine.say(data)
+    engine.runAndWait()
+
 #for loop will check each and every line for better response
 
 def check_for_greeting(sentence):
     for i in range(0,6):
         if GREETING_KEYWORDS[i] in sentence:
             print(random.choice(GREETING_RESPONSES))
+            speak(random.choice(GREETING_RESPONSES))
             print("How are you?")
+            speak("How are you?")
             
     for i in range(0,5):
         if moodq[i] in sentence:
-            print(random.choice(moodr), " ", "It would be great to talk with you")
+            print(random.choice(moodr), " ", "It would be great to have a conversation with you")
+            speaking = random.choice(moodr) + " " + "It would be great to have a conversation with you"
+            speak(data)
             print("Now, What you want me to do")
+            speak("Now, What you want me to do")
 
     for i in range(0,3):
         if sentence == moods[i]:
             print("Why?"," ","How can I Help?")
-
+            speaking = "Why?" + "How can I Help?"
+            speak(speaking)
+            
     if sentence == "calculator":
         print("Tell me numbers: ")
         a=int(input())
