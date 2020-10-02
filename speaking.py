@@ -50,8 +50,8 @@ def check_for_greeting(sentence, i):
             data1 = random.choice(moodr) + ",It would be great to talk with you"
             print(data1)
             speak(data1)
-            print("Now, What you want me to do")
-            speak("Now, What you want me to do")
+            print("Now, What do you want me to do")
+            speak("Now, What do you want me to do")
 
     for i in range(0,3):
         if sentence == moods[i]:
@@ -83,8 +83,8 @@ def check_for_greeting(sentence, i):
     if "song" in sentence:
         r = sr.Recognizer()
         with sr.Microphone() as source:
-                print("What type of song you want?")
-                speak("What type of song you want?")
+                print("What type of song do you want?")
+                speak("What type of song do you want?")
                 audio = r.listen(source)
         j = r.recognize_google(audio)
         j = j.lower()
@@ -94,8 +94,8 @@ def check_for_greeting(sentence, i):
             mixer.music.play()
             time.sleep(30)
         elif "punjabi" in j:
-            print("You shound go for djpunjab.com or pagaljatt.com")
-            speak("You shound go for djpunjab.com or pagaljatt.com")
+            print("You should go for djpunjab.com or pagaljatt.com")
+            speak("You should go for djpunjab.com or pagaljatt.com")
         elif "english" in j:
             mixer.init()
             mixer.music.load('english.mp3')
@@ -134,7 +134,7 @@ def check_for_greeting(sentence, i):
     for i in range(0,2):
         if dateq[i] in sentence:
             now=datetime.datetime.now()
-            print("Current date and time: ")
+            print("Current date and time is: ")
             print(now.strftime("%Y-%m-%d %H:%M:%S"))
 
     if("led" in sentence):
@@ -161,7 +161,7 @@ def check_for_greeting(sentence, i):
         r = sr.Recognizer()
         with sr.Microphone() as source:
             try: 
-                print("which city")
+                print("which city ?")
                 speak("which city")
                 audio = r.listen(source, timeout = 3)
             except Exception as e:
